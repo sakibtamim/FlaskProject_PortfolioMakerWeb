@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+
+
+{% block title %} Design {% endblock %}
+
+{% block body %}
+<div class="container p-3">
+        <div class="jumbotron p-4 bg-light-subtle">
+            <form>
+              <div class="mb-3">
+                <label for="firstname" name="firstname" class="form-label">First Name:</label>
+                <input type="text" class="form-control" placeholder="Please Enter your First Name" id="firstname">
+              </div>
+              <div class="mb-3">
+                <label for="lastname" name="lastname" class="form-label">Last Name:</label>
+                <input type="text" class="form-control" placeholder="Please Enter your Last Name" id="lastname">
+              </div>
+              <div class="mb-3">
+                <label for="school" name="school" class="form-label">School Name:</label>
+                <input type="text" class="form-control" placeholder="Please Enter your School Name" id="school">
+              </div>
+              <div class="mb-3">
+                <label for="college" name="college" class="form-label">College Name:</label>
+                <input type="text" class="form-control" placeholder="Please Enter your College Name" id="college">
+              </div>
+              <div class="mb-3">
+                <label for="university" name="university" class="form-label">University Name:</label>
+                <input type="text" class="form-control" placeholder="Please Enter your University Name" id="university">
+              </div>
+              <div class="mb-3">
+                <label for="phone" name="phone" class="form-label">Phone Number:</label>
+                <input type="number" class="form-control" placeholder="Please Enter your Phone Number" id="phone">
+              </div>
+              <div class="mb-3">
+                <label for="email" name="email" class="form-label">First Name:</label>
+                <input type="email" class="form-control" placeholder="email@email.com" id="email">
+              </div>
+
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+</div>
+
+{% endblock %}
