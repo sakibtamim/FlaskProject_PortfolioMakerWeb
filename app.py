@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,request
 
 app = Flask(__name__)
 
@@ -14,6 +14,39 @@ def design():
 @app.route('/form')
 def form():
     return render_template('form.html')
+
+@app.route('/upload', methods = ["GET","POST"])
+def upload():
+    if request.method == "POST":
+        firstname = request.form.get("firstname")
+        name = request.form.get("lastname")
+        school = request.form.get("school")
+        college = request.form.get("college")
+        university = request.form.get("university")
+        phone = request.form.get("phone")
+        email = request.form.get("email")
+        about = request.form.get("about")
+        skill1 = request.form.get("skill1")
+        skill2 = request.form.get("skill2")
+        skill3 = request.form.get("skill3")
+        skill4 = request.form.get("skill4")
+        pic = request.form.get("pic")
+
+        print(firstname)
+        print(name)
+        print(school)
+        print(college)
+        print(university)
+        print(phone)
+        print(email)
+        print(about)
+        print(skill1)
+        print(skill2)
+        print(skill3)
+        print(skill4)
+        print(pic)
+
+    return "Uploaded"
 
 if __name__ == '__main__':
     app.run(debug=True)
