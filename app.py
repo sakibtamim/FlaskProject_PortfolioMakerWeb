@@ -15,14 +15,17 @@ def design():
 def form():
     return render_template('form.html')
 
+
 @app.route('/upload', methods = ["GET","POST"])
 def upload():
     if request.method == "POST":
         firstname = request.form.get("firstname")
-        name = request.form.get("lastname")
+        lastname = request.form.get("lastname")
+        profession = request.form.get("profession")
         school = request.form.get("school")
         college = request.form.get("college")
         university = request.form.get("university")
+        address = request.form.get("address")
         phone = request.form.get("phone")
         email = request.form.get("email")
         about = request.form.get("about")
@@ -32,21 +35,9 @@ def upload():
         skill4 = request.form.get("skill4")
         pic = request.form.get("pic")
 
-        print(firstname)
-        print(name)
-        print(school)
-        print(college)
-        print(university)
-        print(phone)
-        print(email)
-        print(about)
-        print(skill1)
-        print(skill2)
-        print(skill3)
-        print(skill4)
-        print(pic)
-
-    return "Uploaded"
+    return render_template('design1.html', fname = firstname, lname = lastname, dprofession = profession, dschool = school,
+                           dcollege = college, duniversity = university, daddress = address, dphone = phone, dmail = email, dabout= about, dskill1 = skill1,
+                           dskill2 = skill2, dskill3 = skill3, dskill4 = skill4)
 
 if __name__ == '__main__':
     app.run(debug=True)

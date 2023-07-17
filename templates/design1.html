@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Design {% endblock %}
+
+{% block body %}
+<!--Navigation-->
+<nav class="navbar navbar-expand-lg fixed-top" >
+  <div class="container">
+    <a class="navbar-brand" href="{{ url_for('home') }}">Portfo-Maker</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse " id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+  </div>
+</nav>
+
+<!-- main banner -->
+    <section class="bgimage" id="home">
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero-text">
+                <h2 class="hero_title">Hi, it's me {{ fname }}{{ lname }}</h2>
+                <p class="hero_desc">I am a {{ dprofession }} in {{ daddress }}</p>
+            </div>
+            </div>
+        </div>
+    </section>
+<!-- about section-->
+    <section id="about">
+        <div class="container mt-4 pt-4">
+            <h1 class="text-center">About Me</h1>
+            <div class="row mt-4">
+                <div class="col-lg-4">
+                    <img src="/static/images/pic.jpg" class= "imageAboutPage mb-3" alt="">
+                </div>
+
+                <div class="col-lg-8">
+                    <p> {{ dabout }}</p>
+
+                    <div class="row mt-3">
+                        <h6>School name : {{ dschool }}</h6>
+                    </div>
+
+                    <div class="row mt-3">
+                        <h6>College name : {{ dcollege }}</h6>
+                    </div>
+
+                    <div class="row mt-3">
+                        <h6>University name : {{ duniversity }}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Skills section-->
+    <section id="skills">
+        <div class="container">
+            <h1 class="text-center">Skills</h1>
+            <div class="row">
+
+                <div class="col-lg-6 mt-4">
+                    <div class="card servicesText">
+                        <div class="card-body">
+                            <h4 class="text-center">{{ dskill1 }}</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mt-4">
+                    <div class="card servicesText">
+                        <div class="card-body">
+                            <h4 class="text-center">{{ dskill2 }}</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mt-4">
+                    <div class="card servicesText">
+                        <div class="card-body">
+                            <h4 class="text-center">{{ dskill3 }}</h4>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6 mt-4">
+                    <div class="card servicesText">
+                        <div class="card-body">
+                            <h4 class="text-center">{{ dskill4 }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- contact section-->
+    <section id="contact">
+        <div class="container mt-5 contactContent">
+            <h1 class="text-center">Contact Me</h1>
+
+            <div class="row mt-4">
+                <div class="col-lg-5">
+
+                    <div style="max-width:100%;overflow:hidden;color:red;width:500px;height:500px;">
+
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233667.866001258!2d90.25446568583791!3d23.780863190087654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1689550556840!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- form fields -->
+                    <form>
+                        <h4 class="form-control form-control-lg" >Phone: {{ dphone }}</h4>
+                        <h4 class="form-control form-control-lg" >Email: {{ dmail }}</h4>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
