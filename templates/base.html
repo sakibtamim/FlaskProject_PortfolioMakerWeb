@@ -16,5 +16,43 @@
 <script type="text/javascript" src="{{ url_for('static', filename= 'js/bootstrap.min.js') }}"></script>
 
 
+<!--form step funtion-->
+<script>
+
+    function tostep2(){
+        document.getElementById("personal").style.display ="none";
+        document.getElementById("education").style.display ="block";
+    }
+    function tostep3(){
+        document.getElementById("education").style.display ="none";
+        document.getElementById("contact").style.display ="block";
+    }
+    function tostep4(){
+        document.getElementById("contact").style.display ="none";
+        document.getElementById("about").style.display ="block";
+    }
+    function tostep5(){
+        document.getElementById("about").style.display ="none";
+        document.getElementById("skills").style.display ="block";
+    }
+    function tobackstep1(){
+        document.getElementById("education").style.display ="none";
+        document.getElementById("personal").style.display ="block";
+    }
+    function tobackstep2(){
+        document.getElementById("contact").style.display ="none";
+        document.getElementById("education").style.display ="block";
+    }
+    function tobackstep3(){
+        document.getElementById("about").style.display ="none";
+        document.getElementById("contact").style.display ="block";
+    }
+    function tobackstep4(){
+        document.getElementById("skills").style.display ="none";
+        document.getElementById("about").style.display ="block";
+    }
+
+
+</script>
 </body>
 </html>

@@ -35,6 +35,9 @@ def upload():
         skill2 = request.form.get("skill2")
         skill3 = request.form.get("skill3")
         skill4 = request.form.get("skill4")
+        git = request.form.get("github")
+        fb = request.form.get("facebook")
+        linkedin = request.form.get("linkedin")
         key = uuid.uuid1()
 
         #Image uploading method
@@ -44,7 +47,7 @@ def upload():
         os.rename(f"static/images/{img.filename}",f"static/images/{img_new_name}")
     return render_template('design1.html', fname = firstname, lname = lastname, dprofession = profession, dschool = school, img = img_new_name,
                            dcollege = college, duniversity = university, daddress = address, dphone = phone, dmail = email, dabout= about, dskill1 = skill1,
-                           dskill2 = skill2, dskill3 = skill3, dskill4 = skill4)
+                           dskill2 = skill2, dskill3 = skill3, dskill4 = skill4, dgit = git, dfb=fb, dlinkedin=linkedin)
 
 if __name__ == '__main__':
     app.run(debug=True)

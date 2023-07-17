@@ -8,85 +8,145 @@
 <div class="container p-3">
         <div class="jumbotron p-4 bg-light-subtle">
             <form action="/upload" method="POST" enctype="multipart/form-data">
-              <div class="mb-3">
-                <label for="firstname" class="form-label">First Name :</label>
-                <input type="text" name="firstname"  class="form-control" placeholder="Enter your First Name" id="firstname" required>
+
+              <div id="personal">
+                  <h3>Personal Details</h3>
+
+                  <div class="mb-3">
+                    <label for="firstname" class="form-label">First Name :</label>
+                    <input type="text" name="firstname"  class="form-control" placeholder="Enter your First Name" id="firstname" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="lastname" class="form-label">Last Name :</label>
+                    <input type="text" name="lastname" class="form-control" placeholder="Enter your Last Name" id="lastname" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <h6>Upload your picture :</h6>
+                    <input type="file" accept="image/*" name="pic" class="form-control" id="pic" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="address" class="form-label">Address :</label>
+                    <input type="text" name="address" class="form-control" placeholder="Enter your Address" id="address" required>
+                  </div>
+                  <br>
+
+                  <div class="mb-3">
+                    <label for="github" class="form-label">GitHub (Optional):</label>
+                    <input type="text" name="github" class="form-control" placeholder="Enter your github profile" id="github" >
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="facebook" class="form-label">Facebook (Optional):</label>
+                    <input type="text" name="facebook" class="form-control" placeholder="Enter your facebook profile" id="facebook" >
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="linkedin" class="form-label">Linkedin (Optional):</label>
+                    <input type="text" name="linkedin" class="form-control" placeholder="Enter your linkedin profile" id="linkedin" >
+                  </div>
+
+
+                  <button class="btn btn-primary" onclick="tostep2()">Next</button>
+
               </div>
 
-              <div class="mb-3">
-                <label for="lastname" class="form-label">Last Name :</label>
-                <input type="text" name="lastname" class="form-control" placeholder="Enter your Last Name" id="lastname" required>
+              <div id="education" style="display: none" >
+                  <h3>Educational Details</h3>
+
+                  <div class="mb-3">
+                    <label for="school" class="form-label">School Name :</label>
+                    <input type="text" name="school" class="form-control" placeholder="Enter your School Name" id="school" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="college" class="form-label">College Name :</label>
+                    <input type="text" name="college" class="form-control" placeholder="Enter your College Name" id="college" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="university"  class="form-label">University Name :</label>
+                    <input type="text" name="university" class="form-control" placeholder="Enter your University Name" id="university" required>
+                  </div>
+
+                  <button class="btn btn-primary" onclick="tobackstep1()">Back</button>
+                  <button class="btn btn-primary" onclick="tostep3()">Next</button>
+
               </div>
 
-              <div class="mb-3">
-                <label for="profession" class="form-label">Profession :</label>
-                <input type="text" name="profession" class="form-control" placeholder="Enter your Profression :" id="profession" required>
+              <div id="contact" style="display: none">
+                  <h3>Contact Information</h3>
+
+                  <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number :</label>
+                    <input type="number" name="phone" class="form-control" placeholder="Enter your Phone Number" id="phone" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email :</label>
+                    <input type="email" name="email" class="form-control" placeholder="email@email.com" id="email" required>
+                  </div>
+
+                  <button class="btn btn-primary" onclick="tobackstep2()">Back</button>
+                  <button class="btn btn-primary" onclick="tostep4()">Next</button>
+
               </div>
 
-              <div class="mb-3">
-                <label for="school" class="form-label">School Name :</label>
-                <input type="text" name="school" class="form-control" placeholder="Enter your School Name" id="school" required>
+              <div id="about" style="display: none">
+                  <h3>About You</h3>
+
+                  <div class="mb-3">
+                    <label for="profession" class="form-label">Profession :</label>
+                    <input type="text" name="profession" class="form-control" placeholder="Enter your Profression :" id="profession" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <h6>Write something about you :</h6>
+                    <textarea name="about" class="form-control" id="about" rows="10"></textarea>
+                  </div>
+
+                  <button class="btn btn-primary" onclick="tobackstep3()">Back</button>
+                  <button class="btn btn-primary" onclick="tostep5()">Next</button>
+
               </div>
 
-              <div class="mb-3">
-                <label for="college" class="form-label">College Name :</label>
-                <input type="text" name="college" class="form-control" placeholder="Enter your College Name" id="college" required>
+              <div id="skills" style="display: none">
+                  <h3>Skills Details</h3>
+
+                  <div class="mb-3">
+                    <label for="skill1" class="form-label">Enter your skill :</label>
+                    <input type="text" name="skill1" class="form-control" placeholder="Python" id="skill1" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="skill2" class="form-label">Enter your skill (Optional):</label>
+                    <input type="text" name="skill2" class="form-control" placeholder="Java" id="skill2">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="skill3" class="form-label">Enter your skill (Optional):</label>
+                    <input type="text" name="skill3" class="form-control" placeholder="" id="skill3">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="skill4" class="form-label">Enter your skill (Optional):</label>
+                    <input type="text" name="skill4" class="form-control" placeholder="" id="skill4">
+                  </div>
+
+                  <button class="btn btn-primary" onclick="tobackstep4()">Back</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+
               </div>
 
-              <div class="mb-3">
-                <label for="university"  class="form-label">University Name :</label>
-                <input type="text" name="university" class="form-control" placeholder="Enter your University Name" id="university" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="address" class="form-label">Address :</label>
-                <input type="text" name="address" class="form-control" placeholder="Enter your Address" id="address" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="phone" class="form-label">Phone Number :</label>
-                <input type="number" name="phone" class="form-control" placeholder="Enter your Phone Number" id="phone" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="email" class="form-label">Email :</label>
-                <input type="email" name="email" class="form-control" placeholder="email@email.com" id="email" required>
-              </div>
-
-              <div class="mb-3">
-                  <h6>Write something about you :</h6>
-                  <textarea name="about" class="form-control" id="about" rows="10"></textarea>
-              </div>
-
-              <div class="mb-3">
-                <label for="skill1" class="form-label">Enter your skill :</label>
-                <input type="text" name="skill1" class="form-control" placeholder="Python" id="skill1" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="skill2" class="form-label">Enter your skill (Optional):</label>
-                <input type="text" name="skill2" class="form-control" placeholder="Java" id="skill2">
-              </div>
-
-              <div class="mb-3">
-                <label for="skill3" class="form-label">Enter your skill (Optional):</label>
-                <input type="text" name="skill3" class="form-control" placeholder="" id="skill3">
-              </div>
-
-              <div class="mb-3">
-                <label for="skill4" class="form-label">Enter your skill (Optional):</label>
-                <input type="text" name="skill4" class="form-control" placeholder="" id="skill4">
-              </div>
-
-              <div class="mb-3">
-                <h6>Upload your picture :</h6>
-                <input type="file" accept="image/*" name="pic" class="form-control" id="pic" required>
-              </div>
-
-              <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
 
 </div>
+
+
+
+
 
 {% endblock %}
