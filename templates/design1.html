@@ -8,13 +8,10 @@
 <nav class="navbar navbar-expand-lg fixed-top" >
   <div class="container">
     <a class="navbar-brand" href="{{ url_for('home') }}">Portfo-Maker</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
         <div class="collapse navbar-collapse " id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
@@ -47,7 +44,7 @@
             <h1 class="text-center">About Me</h1>
             <div class="row mt-4">
                 <div class="col-lg-4">
-                    <img src="/static/images/pic.jpg" class= "imageAboutPage mb-3" alt="">
+                    <img src="static/images/{{ img }}" class= "imageAboutPage mb-3" alt="">
                 </div>
 
                 <div class="col-lg-8">

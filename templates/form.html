@@ -7,7 +7,7 @@
 {% block body %}
 <div class="container p-3">
         <div class="jumbotron p-4 bg-light-subtle">
-            <form action="/upload" method="POST">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
                 <label for="firstname" class="form-label">First Name :</label>
                 <input type="text" name="firstname"  class="form-control" placeholder="Enter your First Name" id="firstname" required>
@@ -80,7 +80,7 @@
 
               <div class="mb-3">
                 <h6>Upload your picture :</h6>
-                <input type="file" name="pic" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" required>
+                <input type="file" accept="image/*" name="pic" class="form-control" id="pic" required>
               </div>
 
               <button type="submit" class="btn btn-primary">Submit</button>

@@ -1,4 +1,6 @@
 from flask import Flask,render_template,request
+import uuid
+import os
 
 app = Flask(__name__)
 
@@ -33,9 +35,14 @@ def upload():
         skill2 = request.form.get("skill2")
         skill3 = request.form.get("skill3")
         skill4 = request.form.get("skill4")
-        pic = request.form.get("pic")
+        key = uuid.uuid1()
 
-    return render_template('design1.html', fname = firstname, lname = lastname, dprofession = profession, dschool = school,
+        #Image uploading method
+        img = request.files["pic"]
+        img.save(f"static/images/{img.filename}")
+        img_new_name = f"{key}{img.filename}"
+        os.rename(f"static/images/{img.filename}",f"static/images/{img_new_name}")
+    return render_template('design1.html', fname = firstname, lname = lastname, dprofession = profession, dschool = school, img = img_new_name,
                            dcollege = college, duniversity = university, daddress = address, dphone = phone, dmail = email, dabout= about, dskill1 = skill1,
                            dskill2 = skill2, dskill3 = skill3, dskill4 = skill4)
 
